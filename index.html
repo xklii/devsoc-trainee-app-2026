@@ -10,20 +10,27 @@
   <style>
     body {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
-      margin: 5vw;
+      margin-left: 200px;
+      margin-right: 200px;
+
       background-color: #CFC0FC;
     }
 
     #sidebar {
       border: 2px solid black;
       margin-bottom: 10vw;
-      
+      top: 50%;
+      transform: translateY(-50%);
       padding: 20px;
       width: 200px;
       background-color: white;
       position: fixed;
-      height: 100%;
+      height: 600px; /* make this semi adjustable later */
       overflow: auto;
+
+      background-image: radial-gradient(#CFC0FC 1px, transparent -50%);
+      background-size: 3px 3px;
+  
     }
 
     #sidebar a.active {
@@ -47,8 +54,15 @@
     
     }
 
+    .about-me-box {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      height: 100px;
+
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+
     .avatar-box {
-      height: (200 - 20 * 2)px;
       border: 2px solid black;
       margin-bottom: 20px;
       aspect-ratio: 1 / 1;
@@ -56,42 +70,60 @@
       align-content: center;
       text-align: center;
       overflow: hidden;
+
+      background-image: url("asa_pfp.png");
+      background-color: #CFC0FC;
+      background-blend-mode: luminosity;
+      background-size: 110%;
+      background-position: center;
     }
 
-    .avatar-box img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      object-position: center top;
+    .avatar-box:hover:not(.active) {
+      background-blend-mode: difference;
+      color: white;
     }
-
-
 
     .content {
       border: 2px solid black;
       padding: 20px;
       margin-left: 280px;
+      background-color: rgb(214, 214, 214);
+      height: clamp(200px, 75vw, 90vh);
+      overflow: auto;
+      margin-bottom: 40px;
+      aspect-ratio: 257 / 364;
+    }
+
+    .horizontal-panel {
+      border: 2px solid black;
+      padding: 20px;
       background-color: white;
-      height: clamp(300px, 80vw, 100vh);
+      height: 280px;
       overflow: auto;
     }
+    
+    :root {
+      color-scheme: light dark;
+    }
+
   </style>
 
 </head>
 <body>
-
   <div id="sidebar">
-    <div class = avatar-box>
-      <img src="asa_pfp.png" alt="haiiiii :3">
-    </div>
+    <div class = avatar-box></div>
+    <div class = "about-me-box"></div>
     <a class="active" href="index.html">Home</a>
     <a href="interests.html">Interests</a>
     <a href="projects.html">Projects</a>
   </div>
 
-  <div class = content>
-    <p> welcome all </p>
+  <div class = "content">
+    <div class = "horizontal-panel"><p>content</p></div>
+  </div>
+
+   <div class = "content">
+    <div class = "horizontal-panel"><p>content</p></div>
   </div>
 
 </body>
