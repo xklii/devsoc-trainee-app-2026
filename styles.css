@@ -1,0 +1,161 @@
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-left: 200px;
+      margin-right: 200px;
+      
+      background-color: #CFC0FC;
+      background-image: url("asa_pfp.png");
+      background-color: #CFC0FC;
+      background-blend-mode: lighten;
+      background-size: 100px 100px;
+      background-position: center;
+      background-attachment: fixed;
+      display: grid;
+      background-repeat: repeat;
+    }
+
+    #sidebar {
+      border: 2px solid black;
+      margin-bottom: 10vw;
+      top: 50%;
+      transform: translateY(-50%); 
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      width: 200px;
+      background-color: white;
+      position: fixed;
+      height: 600px; /* make this semi adjustable later */
+      overflow: auto;
+
+      background-image: radial-gradient(#CFC0FC 1px, transparent -50%);
+      background-size: 3px 3px;
+  
+    }
+
+    #sidebar a.active {
+      background-color: #CFC0FC;
+      color: black;
+    }
+
+    #sidebar a:hover:not(.active) {
+      background-color: #656565;
+      color: white;
+    }
+    
+    #sidebar a {
+      border: 2px solid black;
+      margin-top: 20px;
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+      background-color: white;
+    
+    }
+
+    .about-me-box {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      height: 100px;
+
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .avatar-box {
+      border: 2px solid black;
+      margin-bottom: 20px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      order: -1;
+      flex: 0 1 auto;
+      align-self: center;
+      align-content: center;
+      text-align: center;
+      overflow: hidden;
+
+      background-image: url("asa_pfp.png");
+      background-color: #CFC0FC;
+      background-blend-mode: luminosity;
+      background-size: 110%;
+      background-position: center;
+    }
+
+    .avatar-box:hover:not(.active) {
+      background-blend-mode: difference;
+      color: white;
+    }
+
+    .content {
+      border: 2px solid black;
+      padding: 20px;
+      margin-left: 280px;
+      background-color: rgb(214, 214, 214);
+      height: clamp(150px, 75vw, 80vh);
+      overflow: auto;
+      margin-bottom: 40px;
+      aspect-ratio: 257 / 364;
+
+      display: flex;
+      justify-content: space-between;
+      
+    }
+
+    .long-vertical-panel {
+      border: 2px solid black;
+
+      background-color: white;
+
+      flex: 1;
+      margin: 5px;
+    }
+
+    .horizontal-panel {
+      border: 2px solid black;
+      background-color: white;
+
+      flex: 1;
+      height: 100px;
+      margin: 5px;
+   
+    }
+
+    .album-panel {
+      border: 2px solid black;
+      flex: 1;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      align-self: flex-start;
+      background-color: #656565;
+    }
+
+    .album-panel img {
+      object-fit:cover;
+      aspect-ratio: 1 / 1;
+      max-height: 100%;
+      width: auto;
+      display: block;
+
+      mix-blend-mode: luminosity;
+    }
+
+    .album-panel img:hover {
+      object-fit:cover;
+      aspect-ratio: 1 / 1;
+      max-height: 100%;
+      width: auto;
+      display: block;
+      /* returns to normal album */
+      mix-blend-mode: normal;
+    }
+    
+    :root {
+      
+    }
