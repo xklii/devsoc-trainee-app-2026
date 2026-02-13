@@ -8,19 +8,39 @@
       margin-left: 200px;
       margin-right: 200px;
       
-      background-color: #CFC0FC;
+    }
+
+    body::before {
       background-image: url("asa_pfp.png");
-      background-color: #CFC0FC;
-      background-blend-mode: lighten;
-      background-size: 100px 100px;
-      background-position: center;
+      background-size: 120px 120px;
+      
       background-attachment: fixed;
       display: grid;
       background-repeat: repeat;
+      content: ' ';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      filter: blur(5px);
+      animation: slideBg 20s linear infinite, fade 5s linear forwards;
+    }
+
+    @keyframes slideBg {
+      from { background-position: 0 0; }
+      to { background-position: 120px 120px; }
+    }
+
+    @keyframes fade {
+      to { opacity: 0.5; filter: blur(1px) }
     }
 
     #sidebar {
-      border: 2px solid black;
+      border:2px solid black;
+      border-radius: 20px;
       margin-bottom: 10vw;
       top: 50%;
       transform: translateY(-50%); 
@@ -34,9 +54,6 @@
       height: 600px; /* make this semi adjustable later */
       overflow: auto;
 
-      background-image: radial-gradient(#CFC0FC 1px, transparent -50%);
-      background-size: 3px 3px;
-  
     }
 
     #sidebar a.active {
@@ -51,13 +68,14 @@
     
     #sidebar a {
       border: 2px solid black;
+      border-radius: 20px;
       margin-top: 20px;
       display: block;
       color: black;
       padding: 16px;
       text-decoration: none;
       background-color: white;
-    
+     
     }
 
     .about-me-box {
@@ -98,61 +116,99 @@
       padding: 20px;
       margin-left: 280px;
       background-color: rgb(214, 214, 214);
-      height: clamp(150px, 75vw, 80vh);
+      height: 75vh;
       overflow: auto;
       margin-bottom: 40px;
       aspect-ratio: 257 / 364;
 
-      display: flex;
-      justify-content: space-between;
-      
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+
+      gap: 5px
     }
+
+   
 
     .long-vertical-panel {
       border: 2px solid black;
-
       background-color: white;
-
-      flex: 1;
-      margin: 5px;
+      padding: 5px;
     }
 
-    .horizontal-panel {
+    .album-content {
+      border: 2px solid black;
+      padding: 20px;
+      margin-left: 280px;
+      background-color: rgb(214, 214, 214);
+      height: 75vh;
+      overflow: auto;
+      margin-bottom: 40px;
+      aspect-ratio: 257 / 364;
+
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-template-columns: 2fr 4fr;
+      gap: 20px 0;
+      align-items: stretch;
+
+      grid-template-areas: "album album" "left right";
+    }
+
+    .general-panel {
+
       border: 2px solid black;
       background-color: white;
-
-      flex: 1;
-      height: 100px;
-      margin: 5px;
-   
+      padding: 5px;
     }
+
+    .album-info-right {
+      border: 2px solid black;
+      background-color: white;
+      border-right: white;
+      padding: 5px;
+      overflow: scroll;
+      text-align: center;
+      grid-area: left;
+    }
+
+    .album-info-left {
+      border: 2px solid black;
+      background-color: white;
+     
+      padding: 5px;
+      overflow: scroll;
+      text-align: center;
+      grid-area: right;
+    }
+    
 
     .album-panel {
       border: 2px solid black;
-      flex: 1;
-      width: 100%;
       aspect-ratio: 1 / 1;
-      align-self: flex-start;
       background-color: #656565;
+       /* grid css no auto shrink */
+      min-width: 0;
+      min-height: 0;
+      grid-area: album;
+      grid-column: span 2;
+      object-fit:cover;
+      align-self: center;
     }
 
     .album-panel img {
-      object-fit:cover;
+
       aspect-ratio: 1 / 1;
-      max-height: 100%;
-      width: auto;
+      width: 100%;
+      height: 100%;
       display: block;
+     
 
       mix-blend-mode: luminosity;
     }
 
     .album-panel img:hover {
-      object-fit:cover;
-      aspect-ratio: 1 / 1;
-      max-height: 100%;
-      width: auto;
-      display: block;
-      /* returns to normal album */
+      /* returns to normal album colours */
       mix-blend-mode: normal;
     }
     
