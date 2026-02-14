@@ -1,4 +1,7 @@
-
+    /**
+      credit to ali aslam for dark/light mode code:
+      https://medium.com/@a1guy/toggle-dark-light-mode-and-remember-preference-with-javascript-no-libraries-4399f53287a1
+    */
     * {
       box-sizing: border-box;
     }
@@ -27,18 +30,16 @@
       z-index: -1;
       opacity: 0.2;
       filter: blur(5px);
-      background-color: #CFC0FC;
+      background-color: var(--accent-color);
 
       background-blend-mode: lighten;
       animation: slideBg 20s linear infinite, fade 5s linear forwards;
     }
 
-    body.dark-mode::before{
+    body[data-theme="dark"]::before {
       background-image: url("yoru (1).webp");
       background-color: #42395c;
-
-      background-blend-mode: luminosity;
-     
+      background-blend-mode: multiply;
     }
 
     @keyframes slideBg {
@@ -52,20 +53,19 @@
 
     #sidebar {
       flex: 0 0 auto;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
+      border: 2px dotted var(--accent-color);
       border-radius: 20px;
       justify-content: center;
       display: flex;
       flex-direction: column;
       width: 200px;
       background-color: white;
-      
-      overflow: auto;
+      overflow: hidden;
     }
 
     #sidebar a.active {
-      background-color: #CFC0FC;
-      color: black;
+      background-color: var(--accent-color);
+      color: var(--dynamic-text-color);
     }
 
     #sidebar a:hover:not(.active) {
@@ -82,17 +82,26 @@
       text-align: center;
     }
 
-    .about-me-box {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      height: 100px;
-      overflow: visible;
-
-      background-color: rgba(255, 255, 255, 0.75);
+    button {
+      display: block;
+      color: black;
+      border: none;
+      font: verdana;
+      padding: 16px;
+      text-decoration: none;
+      background-color: white;
+      text-align: center;
+      cursor: pointer;
+  
     }
 
+    button:hover {
+      background-color: #656565;
+    }
+
+
     .avatar-box {
-      border: 2px solid #CFC0FC;
+      border: 2px dotted var(--accent-color);
       margin: 20px;
       margin-left: 20px;
       margin-right: 20px;
@@ -107,13 +116,13 @@
       overflow: hidden;
 
       background-image: url("asa_pfp.png");
-      background-color: #CFC0FC;
+      background-color: var(--accent-color);
       background-blend-mode: luminosity;
       background-size: 110%;
       background-position: center;
     }
 
-    body.dark-mode .avatar-box {
+    body[data-theme="dark"] .avatar-box {
       background-image: url("yoru (1).webp");
     }
 
@@ -143,15 +152,16 @@
 
     .about-me-content {
       flex: 0 0 auto;
-      border: 2px dotted #CFC0FC;
+      border: 2px dotted var(--accent-color);
       padding: 20px;
       background-color: white;
 
-      
-      height: 50vh;
+
+      height: 40vh;
+      aspect-ratio: 257 / 364;
       width: clamp(500px, 800px, 1200px);
 
-      overflow: auto;
+      overflow: hidden;
       gap: 5px;
     }
 
@@ -260,5 +270,11 @@
     }
     
     :root {
-      
+      --accent-color: #CFC0FC;
+      --dynamic-text-color: black;
+    }
+
+    body[data-theme="dark"] {
+      --accent-color: #3f3a4e;
+      --dynamic-text-color: white;
     }
