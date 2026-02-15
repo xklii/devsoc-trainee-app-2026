@@ -57,7 +57,7 @@
       justify-content: center;
       display: flex;
       flex-direction: column;
-      width: 200px;
+      width: 220px;
       background-color: white;
       overflow: hidden;
     }
@@ -100,8 +100,7 @@
 
 
     .avatar-box {
-      border: 3px dotted var(--accent-color);
-      margin: 20px;
+      margin-top: 20px;
       margin-left: 20px;
       margin-right: 20px;
       width: 100%;
@@ -121,6 +120,21 @@
       background-position: center;
     }
 
+    .avatar-panel {
+      border: 2px solid black;
+      width: auto;
+      aspect-ratio: 1 / 1;
+
+      align-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .avatar-panel img {
+      width: 100%;
+      height: 100%;
+    }
+
     body[data-theme="dark"] .avatar-box {
       background-image: url("images/yoru (1).webp");
     }
@@ -132,7 +146,7 @@
 
     .index-wrapper {
       width: 60vw;
-      max-height: 100vh;
+      max-height: 90vh;
       display: flex;
       flex-direction: row;
       gap: 40px;
@@ -145,8 +159,9 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      max-height: 100vh;
+      max-height: 80vh;
       overflow-y: auto;
+      scrollbar-color: var(--dynamic-text-color) var(--accent-color);
     }
 
     .about-me-content {
@@ -154,53 +169,80 @@
       margin: 0 auto;
       border: 2px dotted var(--accent-color);
       padding: 20px;
-      background-color: white;
-      min-height: 40vh;
-      max-height: 75vh;
-      aspect-ratio: 1 / 1;
+      background-color: white; 
+      width: 30vw;
       overflow-x: hidden;
       overflow-y:hidden;
-      gap: 5px;
+    }
+
+    .socials-content {
+      flex: 0 1 auto;
+      margin: 0 auto;
+      background-color: white; 
+      max-height: 80px;
+      overflow-x: hidden;
+      overflow-y:hidden;
+
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+  
+      box-sizing: border-box;
+    }
+
+    .socials-icon {
+      aspect-ratio: 1 / 1;
+      align-content: center;
+      text-align: center;
+      width: auto;
+    }
+    
+
+    .socials-icon img {
+      width: 100%;
+     
+      height: 100%
+    }
+
+    .socials-box {
+      overflow-x: hidden;
+      overflow-y:hidden;
     }
 
     .content, .album-content {
-
       flex: 0 0 auto;
       border: 2px solid black;
       padding: 20px;
       margin: 0 auto;
       background-color: rgb(214, 214, 214);
-      height: 75vh;
+      width: 30vw;
       overflow: auto;
-      margin-bottom: 40px;
       aspect-ratio: 257 / 364;
-
-      gap: 20px 0;
       align-items: stretch;
-
     }
     .content {
-      
-
       display: grid;
-      grid-template-rows: auto auto;
-      grid-template-columns: auto auto;
-
-     
+      grid-template-rows: auto auto auto auto;
+      grid-template-columns: 1fr auto;
     }
 
-     .album-content {
+    .album-content {
     
 
       display: grid;
       grid-template-rows: auto 1fr;
       grid-template-columns: 4fr 2fr;
-      gap: 20px 0;
       
 
       grid-template-areas: "album album" "left right";
     }
-
+    /* just realised the gap between panels is super ugly */
+    .content-gap {
+      min-height: 40px;
+      text-align: center;
+      color: var(--dynamic-text-color);
+      justify-content: center;
+    }
 
     .long-vertical-panel {
       border: 2px solid black;
@@ -257,7 +299,6 @@
       width: 100%;
       height: 100%;
       display: block;
-     
 
       mix-blend-mode: luminosity;
     }
@@ -276,3 +317,10 @@
       --accent-color: #3f3a4e;
       --dynamic-text-color: white;
     }
+
+
+  /* discord.com/users/1173260311785132056 
+  
+  https://www.instagram.com/hubrigette/
+  
+  */
