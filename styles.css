@@ -15,7 +15,7 @@
     }
 
     body::before {
-      background-image: url("asa_pfp.png");
+      background-image: url("images/asa_pfp.png");
       background-size: 120px 120px;
       
       background-attachment: fixed;
@@ -37,7 +37,7 @@
     }
 
     body[data-theme="dark"]::before {
-      background-image: url("yoru (1).webp");
+      background-image: url("images/yoru (1).webp");
       background-color: #42395c;
       background-blend-mode: multiply;
     }
@@ -115,7 +115,7 @@
       text-align: center;
       overflow: hidden;
 
-      background-image: url("asa_pfp.png");
+      background-image: url("images/asa_pfp.png");
       background-color: var(--accent-color);
       background-blend-mode: luminosity;
       background-size: 110%;
@@ -123,7 +123,7 @@
     }
 
     body[data-theme="dark"] .avatar-box {
-      background-image: url("yoru (1).webp");
+      background-image: url("imagesyoru (1).webp");
     }
 
     .avatar-box:hover:not(.active) {
