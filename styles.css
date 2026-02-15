@@ -120,29 +120,12 @@
       background-position: center;
     }
 
-    .avatar-panel {
-      border: 2px solid black;
-      width: auto;
-      aspect-ratio: 1 / 1;
-
-      align-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .avatar-panel img {
-      width: 100%;
-      height: 100%;
-    }
-
+    
+    
     body[data-theme="dark"] .avatar-box {
       background-image: url("images/yoru (1).webp");
     }
 
-    .avatar-box:hover:not(.active) {
-      background-blend-mode: difference;
-      color: white;
-    }
 
     .index-wrapper {
       width: 60vw;
@@ -165,7 +148,7 @@
     }
 
     .about-me-content {
-      flex: 0 1 auto;
+      flex: 0 0 auto;
       margin: 0 auto;
       border: 2px dotted var(--accent-color);
       padding: 20px;
@@ -220,10 +203,47 @@
       aspect-ratio: 257 / 364;
       align-items: stretch;
     }
+
     .content {
       display: grid;
-      grid-template-rows: auto auto auto auto;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 20px 20px;
+      height: 600px;
+      padding: 20px;
+    }
+
+
+    .avatar-panel {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 2px solid black;
+      align-content: center;
+      text-align: center;
+      overflow: hidden;
+      background-color: #656565;
+    }
+
+    .avatar-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: luminosity;
+    }
+
+    .avatar-panel img:hover {
+      /* returns to normal album colours */
+      mix-blend-mode: normal;
+    }
+
+    .interest-textbox {
+      border: 2px solid black;
+      padding: 20px;
+
+      background-color: white;
+      height: 100%;
+      overflow: auto;
     }
 
     .album-content {
@@ -245,15 +265,6 @@
     }
 
     .long-vertical-panel {
-      border: 2px solid black;
-      background-color: white;
-      padding: 5px;
-    }
-
-   
-
-    .general-panel {
-
       border: 2px solid black;
       background-color: white;
       padding: 5px;
